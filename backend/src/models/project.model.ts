@@ -27,14 +27,17 @@ export class ProjectSchema {
   @prop({ maxlength: 1024, minlength: 5 })
   public videoUrl?: string;
 
-  @prop({ maxlength: 1024, minlength: 5 })
-  public githubUrl?: string;
+  @prop({ required: true, maxlength: 1024, minlength: 5 })
+  public githubUrl!: string;
 
-  @prop({ maxlength: 1024, minlength: 5 })
-  public liveUrl?: string;
+  @prop({ required: true, maxlength: 1024, minlength: 5 })
+  public liveUrl!: string;
 
-  @prop({ type: () => TagSchema, required: true })
+  @prop({ ref: () => TagSchema, required: true })
   public tags!: Ref<TagSchema>[];
+
+  @prop({ default: false })
+  public featured!: boolean;
 }
 
 export default getModelForClass(ProjectSchema);

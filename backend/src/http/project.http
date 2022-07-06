@@ -1,0 +1,52 @@
+### Get list of all tags
+GET http://localhost:3000/api/projects/tags
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmM1MzZhNzVlYjhkOGRhNjE0ZjBmZjgiLCJlbWFpbCI6ImJpbmFtcmFsYW1zYWxAZ21haWwuY29tIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNjU3MTAyODQyLCJleHAiOjE2NTk2OTQ4NDJ9.xSknP2Wqd74Umn8ts2u5RUsGdhI-98OrcQnAL53efFE
+
+### Create a new tag
+POST http://localhost:3000/api/projects/tags
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmM1MzZhNzVlYjhkOGRhNjE0ZjBmZjgiLCJlbWFpbCI6ImJpbmFtcmFsYW1zYWxAZ21haWwuY29tIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNjU3MTAyODQyLCJleHAiOjE2NTk2OTQ4NDJ9.xSknP2Wqd74Umn8ts2u5RUsGdhI-98OrcQnAL53efFE
+Content-Type: application/json
+
+{
+  "name": "TypeScript",
+  "url": "https://google.com"
+}
+
+### Get all projects
+GET http://localhost:3000/api/projects
+
+### Create a new project
+POST http://localhost:3000/api/projects
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmM1MzZhNzVlYjhkOGRhNjE0ZjBmZjgiLCJlbWFpbCI6ImJpbmFtcmFsYW1zYWxAZ21haWwuY29tIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNjU3MTAyODQyLCJleHAiOjE2NTk2OTQ4NDJ9.xSknP2Wqd74Umn8ts2u5RUsGdhI-98OrcQnAL53efFE
+Content-Type: application/json
+
+{
+  "name": "My Awesome Project",
+  "description": "This is a very wonderful project",
+  "thumbnail": "https://thumbnail.com",
+  "videoUrl": "https://youtube.com",
+  "githubUrl": "https://github.com",
+  "liveUrl": "https://website.com",
+  "featured": false,
+  "tags": ["62c5bc1d8d23d9b2b455c2d9"]
+}
+
+### Delete a new project
+DELETE http://localhost:3000/api/projects/62c5cac26ca444b7c88157a9
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmM1MzZhNzVlYjhkOGRhNjE0ZjBmZjgiLCJlbWFpbCI6ImJpbmFtcmFsYW1zYWxAZ21haWwuY29tIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNjU3MTAyODQyLCJleHAiOjE2NTk2OTQ4NDJ9.xSknP2Wqd74Umn8ts2u5RUsGdhI-98OrcQnAL53efFE
+
+### Update an existing project
+PUT http://localhost:3000/api/projects/62c5ce3cfd74488d526c5a69
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmM1MzZhNzVlYjhkOGRhNjE0ZjBmZjgiLCJlbWFpbCI6ImJpbmFtcmFsYW1zYWxAZ21haWwuY29tIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNjU3MTAyODQyLCJleHAiOjE2NTk2OTQ4NDJ9.xSknP2Wqd74Umn8ts2u5RUsGdhI-98OrcQnAL53efFE
+Content-Type: application/json
+
+{
+  "name": "My Awesome Project Updated Again Again",
+  "description": "This is a very wonderful project",
+  "thumbnail": "https://thumbnail.com",
+  "videoUrl": "https://youtube.com",
+  "githubUrl": "https://github.com",
+  "liveUrl": "https://website.com",
+  "featured": false,
+  "tags": ["62c5bc1d8d23d9b2b455c2d9"]
+}

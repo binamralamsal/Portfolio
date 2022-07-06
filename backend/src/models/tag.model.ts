@@ -4,6 +4,9 @@ import { modelOptions, getModelForClass, prop } from "@typegoose/typegoose";
   options: {
     customName: "Tag",
   },
+  schemaOptions: {
+    timestamps: true,
+  },
 })
 export class TagSchema {
   @prop({ required: true, maxlength: 255, minlength: 3 })

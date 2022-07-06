@@ -24,19 +24,19 @@ import config from "../config";
   },
 })
 export class UserSchema {
-  @prop({ required: true, unique: true })
+  @prop({ required: true, unique: true, maxlength: 255, minlength: 3 })
   public email!: string;
 
-  @prop({ required: true })
+  @prop({ required: true, maxlength: 255, minlength: 3 })
   public name!: string;
 
-  @prop({ required: true })
+  @prop({ required: true, maxlength: 1024, minlength: 3 })
   public password!: string;
 
   @prop({ default: false })
   public isAdmin!: boolean;
 
-  @prop()
+  @prop({ maxlength: 1024, minlength: 3 })
   public resetToken?: string;
 
   @prop({ type: () => Date })

@@ -1,7 +1,7 @@
 import App from "./app";
 
-import { AuthRoutes } from "./routes";
+import { AuthRoutes, MessageRoutes } from "./routes";
 
-const app = new App([new AuthRoutes()]);
+const app = new App([new AuthRoutes(), new MessageRoutes()]);
 
 app.listen();

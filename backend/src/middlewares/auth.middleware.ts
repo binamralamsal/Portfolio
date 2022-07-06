@@ -1,16 +1,13 @@
 import jwt from "jsonwebtoken";
-import { Response, NextFunction } from "express";
+import { Request, Response, NextFunction } from "express";
 
 import config from "../config";
 import { User } from "../models";
 import { HttpException } from "../exceptions";
-import {
-  DataStoredInToken,
-  RequestWithUser,
-} from "../interfaces/auth.interface";
+import { DataStoredInToken } from "../interfaces/auth.interface";
 
 const authMiddleware = async (
-  req: RequestWithUser,
+  req: Request,
   res: Response,
   next: NextFunction
 ) => {
@@ -29,9 +26,12 @@ const authMiddleware = async (
       config.JWT_SECRET
     )) as DataStoredInToken;
 
+    if (!decodedToken.isAdmin)
+      return next(new HttpException(401, "You are not an admin"));
+
     const user = await User.findById(decodedToken._id).select("-password");
     if (!user) {
-      throw new HttpException(401, "Wrong authorization token");
+      return next(new HttpException(401, "Wrong authorization token"));
     }
 
     req.user = user;

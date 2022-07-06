@@ -16,11 +16,6 @@ class AuthRoutes implements Routes {
 
   private initializeRoutes() {
     this.router.post(
-      "/signup",
-      validate(signupSchema),
-      this.authController.postSignup
-    );
-    this.router.post(
       "/login",
       validate(loginSchema),
       this.authController.postLogin

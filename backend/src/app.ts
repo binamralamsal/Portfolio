@@ -8,7 +8,7 @@ import { error } from "./middlewares";
 class App {
   public app: Application;
 
-  constructor(routes: Routes[]) {
+  constructor(routes: Routes[] = []) {
     this.app = express();
 
     this.initializeMiddlewares();
@@ -20,10 +20,10 @@ class App {
     await this.connectToMongodb();
 
     this.app.listen(config.PORT, () => {
-      console.log(`=================================`);
+      console.log("=================================");
       console.log(`======= ENV: ${config.NODE_ENV} =======`);
       console.log(`🚀 App listening on the port ${config.PORT}`);
-      console.log(`=================================`);
+      console.log("=================================");
     });
   }
 

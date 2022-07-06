@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node dist/server.js",
     "dev": "ts-node-dev src/server.ts",
+    "create-user": "ts-node src/scripts/CreateUser.ts",
     "build": "tsc"
   },
   "keywords": [],
@@ -28,11 +29,14 @@
     "@types/jsonwebtoken": "^8.5.8",
     "@types/mongoose": "^5.11.97",
     "@types/node": "^18.0.0",
+    "@types/prompt-sync": "^4.1.1",
     "@typescript-eslint/eslint-plugin": "^5.30.5",
     "@typescript-eslint/parser": "^5.30.5",
     "eslint": "^8.19.0",
     "nodemon": "^2.0.19",
     "prettier": "^2.7.1",
+    "prompt-sync": "^4.2.0",
+    "ts-node": "^10.8.2",
     "ts-node-dev": "^2.0.0"
   }
 }
